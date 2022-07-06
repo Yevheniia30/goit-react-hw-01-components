@@ -3,6 +3,11 @@ import { Profile } from './Profile';
 import { Statistics } from './Statistics';
 import { TransactionHistory } from './TransactionHistory';
 
+import user from '../data/user.json';
+import friends from '../data/friends.json';
+import stats from '../data/stats.json';
+import transactions from '../data/transactions.json';
+
 export const App = () => {
   return (
     <div
@@ -12,14 +17,14 @@ export const App = () => {
         flexDirection: 'column',
         // justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
+        // fontSize: 40,
         color: '#010101',
       }}
     >
-      <Profile />
-      <FriendsList />
-      <Statistics />
-      <TransactionHistory />
+      <Profile data={user} />
+      <FriendsList data={friends} />
+      <Statistics data={stats} />
+      <TransactionHistory data={transactions} />
     </div>
   );
 };
