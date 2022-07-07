@@ -1,11 +1,17 @@
 .card{
-    /* height: 200px; */
+    /* padding: 0; */
+    /* height: 415px; */
     /* padding: 20px; */
-    background-color: #fff;
+    /* background-color: #fff; */
     border: 1px solid #cecece;
     border-radius: 10px;
 box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);}
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+
+}
+.card:hover{
+    transform: scale(1.1);
+}
 
     .descr{
             padding: 20px 20px 0;

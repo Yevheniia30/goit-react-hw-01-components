@@ -1,0 +1,12 @@
+table, th, td {
+  border: 1px solid;
+}
+
+.table{
+    margin-top: 15px;
+    width: 300px;
+}
+
+.head{
+    background-color: #cecece;
+}

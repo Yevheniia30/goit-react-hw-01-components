@@ -1,9 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
 export const Profile = ({ data }) => {
-  console.log('data', data);
+  // console.log('data', data);
   const { username, tag, location, avatar, stats } = data;
 
   return (
@@ -38,4 +38,6 @@ export const Profile = ({ data }) => {
   );
 };
 
-Profile.propTypes = {};
+Profile.propTypes = {
+  data: PropTypes.object.isRequired,
+};

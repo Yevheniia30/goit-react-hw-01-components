@@ -1,0 +1,31 @@
+.card{
+    padding: 0;
+}
+
+.item{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 70px 10px 10px;
+border-radius: 4px;
+box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+
+}
+.item:hover{
+    transform: scale(1.1);
+}
+.status{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.off{
+        background-color: #ff0000;
+
+}
+
+.on{
+        background-color: #008000;
+
+}
