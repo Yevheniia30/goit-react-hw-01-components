@@ -5,10 +5,13 @@ import { TransactionHistory } from './TransactionHistory';
 
 import user from '../data/user.json';
 import friends from '../data/friends.json';
-import stats from '../data/stats.json';
+import stat from '../data/stats.json';
 import transactions from '../data/transactions.json';
 
 export const App = () => {
+  const { username, tag, location, avatar, stats } = user;
+
+  console.log('user', user);
   return (
     <div
       style={{
@@ -21,9 +24,15 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Profile data={user} />
-      <FriendsList data={friends} />
-      <Statistics data={stats} title="Upload stats" />
+      <Profile
+        username={username}
+        tag={tag}
+        location={location}
+        avatar={avatar}
+        stats={stats}
+      />
+      <FriendsList friends={friends} />
+      <Statistics stats={stat} title="Upload stats" />
       <TransactionHistory data={transactions} />
     </div>
   );

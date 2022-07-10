@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
-export const Profile = ({ data }) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
   // console.log('data', data);
-  const { username, tag, location, avatar, stats } = data;
+  // const { username, tag, location, avatar, stats } = data;
 
   return (
     <div className={s.card}>
@@ -39,5 +38,13 @@ export const Profile = ({ data }) => {
 };
 
 Profile.propTypes = {
-  data: PropTypes.object.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+  }),
 };

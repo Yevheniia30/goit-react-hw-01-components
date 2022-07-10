@@ -1,8 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
-export const Statistics = ({ data, title }) => {
+export const Statistics = ({ stats, title }) => {
   const bgColor = () => {
     const x = Math.floor(Math.random() * 256);
     const y = Math.floor(Math.random() * 256);
@@ -11,12 +10,12 @@ export const Statistics = ({ data, title }) => {
     return bgColor;
   };
 
-  // console.log('data', data);
+  // console.log('stats', stats);
   return (
     <div className={s.card}>
       {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.list}>
-        {data.map(item => (
+        {stats.map(item => (
           <li
             key={item.id}
             className={s.item}
@@ -32,6 +31,12 @@ export const Statistics = ({ data, title }) => {
 };
 
 Statistics.propTypes = {
-  data: PropTypes.array.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
   title: PropTypes.string.isRequired,
 };

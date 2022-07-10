@@ -1,24 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import s from './FriendsList.module.css';
 
-export const FriendsItem = ({ item }) => {
+export const FriendsItem = ({ avatar, name, isOnline }) => {
   return (
     <li className={s.item}>
-      <span className={s.status + ' ' + (item.isOnline ? s.on : s.off)}>
-        {item.status}
+      <span className={s.status + ' ' + (isOnline ? s.on : s.off)}>
+        {/* {status} */}
       </span>
       <img
-        src={item.avatar}
-        alt={`${item.name}'s avatar`}
+        src={avatar}
+        alt={`${name}'s avatar`}
         className={s.avatar}
         width="100"
       />
-      <p>{item.name}</p>
+      <p>{name}</p>
     </li>
   );
 };
 
-FriendsItem.propTypes = {
-  item: PropTypes.object.isRequired,
-};
+// FriendsItem.propTypes = {
+//   item: PropTypes.object.isRequired,
+// };

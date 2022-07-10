@@ -1,19 +1,30 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import s from './FriendsList.module.css';
 import { FriendsItem } from './FriendsItem';
 
-export const FriendsList = ({ data }) => {
-  // console.log('data', data);
+export const FriendsList = ({ friends }) => {
+  // console.log('friends', friends);
   return (
     <ul className={s.card}>
-      {data.map(item => (
-        <FriendsItem item={item} key={item.id} />
+      {friends.map(item => (
+        <FriendsItem
+          avatar={item.avatar}
+          isOnline={item.isOnline}
+          name={item.name}
+          key={item.id}
+        />
       ))}
     </ul>
   );
 };
 
 FriendsList.propTypes = {
-  data: PropTypes.array.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+    })
+  ),
 };
