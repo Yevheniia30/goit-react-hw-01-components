@@ -3,7 +3,7 @@ import s from './TransactionHistory.module.css';
 import TransactionRow from './TransactionRow';
 
 export const TransactionHistory = ({ data }) => {
-  console.log('data', data);
+  // console.log('data', data);
   return (
     <table className={s.table}>
       <thead className={s.head}>

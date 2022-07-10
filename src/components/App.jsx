@@ -11,7 +11,6 @@ import transactions from '../data/transactions.json';
 export const App = () => {
   const { username, tag, location, avatar, stats } = user;
 
-  console.log('user', user);
   return (
     <div
       style={{
